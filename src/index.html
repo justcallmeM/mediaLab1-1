@@ -7,30 +7,47 @@
   <!--
   Embed needed js libraries for video player. Note, libraries needs to be hosted on your server, under /js folder.
    -->
-  <script type="text/javascript" src="js/clappr.min.js"></script>
+  <script src="js/video.js"></script>
+  <script src="js/videojs-flash.js"></script>
+  <script src="js/videojs-contrib-hls.js"></script>
+  <!--<script type="text/javascript" src="js/clappr.min.js"></script>-->
   <!--
   Location for CSS if needed. Note, cascade style sheets needs to be hosted on your server, under /css folder.
   -->
-
+  <link href="css/video-js.css" rel="stylesheet">
 </head>
 <body>
   <h1>My first HLS player</h1>
 
-  <!--
-  location for your player window
-  -->
-
+  <!-- clappr video player based on java script. -->
   <div id="player"></div>
+
+  <video id=example-video width=600 height=300 class="video-js vjs-default-skin" controls>
+    <source
+       src="https://d2zihajmogu5jn.cloudfront.net/bipbop-advanced/bipbop_16x9_variant.m3u8"
+       type="application/x-mpegURL">
+  </video>
+
   <script>
-    var player = new Clappr.Player({source: "https://d2zihajmogu5jn.cloudfront.net/bipbop-advanced/bipbop_16x9_variant.m3u8", parentId: "#player"});
+  var player = videojs('example-video');
+  player.play();
+
+  function playing(){
+    player.play();
+  }
+
+  function pauseing(){
+    player.pause();
+  }
+
   </script>
 
   <br>
-	<button type="button">Play</button>
-	<button type="button">Pause</button>
-	<button type="button">Stop</button>
-	<button type="button">Jump to 5 sec forward</button>
-	<button type="button">Jump to 5 sec backwards</button>	
+	<button type="button" onclick="playing()">Play</button>
+	<button type="button" onclick="pauseing()">Pause</button>
+	<button type="button" onclick="stopping()">Stop</button>
+	<button type="button" onclick="jumpingForward()">Jump to 5 sec forward</button>
+	<button type="button" onclick="jumpingBack()">Jump to 5 sec backwards</button>	
 	
 	<p>Playlist</p>
 	
