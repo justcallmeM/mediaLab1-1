@@ -40,14 +40,26 @@
     player.pause();
   }
 
+  function stopping(){
+    player.pause().currentTime(0).trigger('loadstart');
+  }
+
+  function jumpingForward(){
+    player.currentTime(player.currentTime() + 15);
+  }
+
+  function jumpingBack(){
+    player.currentTime(player.currentTime() - 15);
+  }
+
   </script>
 
   <br>
 	<button type="button" onclick="playing()">Play</button>
 	<button type="button" onclick="pauseing()">Pause</button>
 	<button type="button" onclick="stopping()">Stop</button>
-	<button type="button" onclick="jumpingForward()">Jump to 5 sec forward</button>
-	<button type="button" onclick="jumpingBack()">Jump to 5 sec backwards</button>	
+	<button type="button" onclick="jumpingForward()">Jump to 15 sec forward</button>
+	<button type="button" onclick="jumpingBack()">Jump to 15 sec backwards</button>	
 	
 	<p>Playlist</p>
 	
