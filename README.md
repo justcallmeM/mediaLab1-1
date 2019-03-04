@@ -17,3 +17,6 @@ or try a live example: https://jsbin.com/gejugat/edit?html,output
   - Test player on at least two browsers and specify in README.md which version and browser it was.
   - Additional features are welcome and bonuses are available.
   - To pass this lab, you have to complete at least two points from the requirement list.
+
+
+  <!--PLAYER WORKS WITH FIREFOX AND CHROME-->
